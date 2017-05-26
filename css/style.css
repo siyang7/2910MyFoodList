@@ -1,18 +1,55 @@
 body {
-    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/confectionary.png") repeat;
+    background: url(../images/darkbg.png);
 }
 
-.foodContainer li:nth-child(even) {
-    background-color: #ccebff;
-}
-
-.foodContainer li:hover{
-    background-color: #99d6ff;
-}
 .contentBox{
-    background-color: #e6f3ff;
+    /*background-color: #e6f3ff;*/
+    background-color: rgb(245, 245, 245);
     padding: 10px;
     margin: 20px 0 0 0;
-    box-shadow: 6px 6px 4px #cccccc;
+    box-shadow: 6px 6px 8px rgba(64, 64, 64, 0.6);
     border-radius: 5px;
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+    font-weight: bold;
+}
+
+h1 {
+    display: inline;
+}
+
+.red {
+	color: red;
+}
+
+.green {
+	color: green;
+}
+
+/* scaling font stuff
+ * https://v4-alpha.getbootstrap.com/content/typography/
+ */
+
+html {
+  font-size: 14px;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 28px;
+  }
 }

@@ -1,105 +1,121 @@
+
+<?php session_start(); ?>
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>FoodDoc</title>
-	<meta http-equiv="Content-Type" content="text/html" charset=utf-8/>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
-	<link rel="stylesheet" href="css/login.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/header.css">
-	
-	<style>
-		div div {
-			margin: auto;
-		}
-		
-	</style>
-</head>
-<body background="images/bg.png">
-	<div class="container">
-		<div id ="logo" class="row">
-			<div class="col-xs-12" id="header">
-				<img src="images/logo.png">
-				<h1 style="display:inline">FoodDoc</h1>
-				<hr>
-			</div>
-		</div>
+<html>
+    <head>
+        <?php include("include/head.inc"); ?>
+        <link rel="stylesheet" href="css/home.css">
 
-		<form name="form" method="post" action="connect.php">
-			
-			<div class="contentBox">
-				<div class="form-group col-md-12 row">
+        <script>
+            function easterEggOver() {
+                $("#egg").fadeOut(function() {
+                    $(this).text("More").fadeIn();
+                });
+//                var egg = document.getElementById("egg"); 
+//                egg.innerHTML = "More";
+            }
+            
+            function easterEggOut() {
+                $("#egg").fadeOut(function() {
+                    $(this).text("Waste Less").fadeIn();
+                });
+//                var egg = document.getElementById("egg");
+//                egg.innerHTML = "Waste Less";
+            }
+        </script>
 
-					<!--mobile / tablet view-->
-					<div class="visible-sm visible-xs">
-					<label class="col-xs-12" for="username">Username:</label>
-					</div>
+    </head>
 
-					<!--desktop view-->
-					<div class="hidden-sm hidden-xs">
-					<label style="text-align:right" class="col-md-4" for="username">Username:</label>
-					</div>
+    <body class="rain">
 
-					<div class="col-md-6 col-xs-12">
-					<input type="text" class="form-control" id="id" name="id" placeholder="Enter username"></div>
+        <?php include("include/header.inc"); ?>
 
-					<!--mobile / tablet view-->
-					<div class="visible-sm visible-xs">
-					<label class="col-xs-12" for="password">Password:</label>
-					</div>
+        <main>
+            <section class="foodbg">
+                <div class="container">
+                    <div class="textBox col-md-offset-8 col-md-4">
 
-					<!--desktop view-->
-					<div class="hidden-sm hidden-xs">
-					<label style="text-align:right" class="col-md-4" for="password">Password:</label>
-					</div>
+                        <div onMouseOver="easterEggOver()" onMouseOut="easterEggOut()" class="row">
+                            <h1>
+                                <span id="egg">Waste Less</span>
+                                <span>Food</span>
+                            </h1>
+                        </div>
 
-					<div class="col-md-6 col-xs-12">
-					<input type="password" class="form-control" id="pw" name="pw" placeholder="Enter password"></div>
+                        <div>
+                            <p class="foodText">
+                                To better determine yours and others' food preferences so you will be more aware of what others need and don't need.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-				</div>			
-			
-			<?php
-			if (isset($_GET['error'])) {
-				echo '<p class="red row col-xs-11 col-xs-offset-1">Please do not leave fields blank.</p>';
-			}
-			?>
-			
-			</div>
+            <section class="dark-section">
+                <div class="container">
+                    <h1>Our Mission</h1><br />
+                    <p>
+                        <br />
+                        We want to provide a way for you to know what to buy for when you are cooking for more than just yourself.
+                    </p>
+                </div>
+            </section>
 
-			<!-- desktop -->
-			<div class="visible-lg visible-md row">
-				<div class="col-md-2 col-md-offset-3" >
-					<button type="submit" class="btn btn-block btn-primary">Login</button>
-				</div>
-				<div class="col-md-2" >
-					<button type="reset" value="Reset" class="btn btn-block btn-primary">Reset</button>
-				</div>
-				<div class="col-md-2" >
-					<a href="register.php"><button type="button" class="btn btn-block btn-primary">Create Account</button></a>
-				</div>
-			</div>
-		
-			<!-- mobile / tablet -->
-			<div class="hidden-lg hidden-md">
-				<div style="margin-top:20px" class="col-xs-8 col-xs-offset-2 row" >
-					<button type="submit" class="btn btn-block btn-primary">Login</button>
-				</div>
-				<div style="margin-top:20px" class="col-xs-8 col-xs-offset-2 row" >
-					<button type="reset" value="Reset" class="btn btn-block btn-primary">Reset</button>
-				</div>
-				<div style="margin-top:20px" class="col-xs-8 col-xs-offset-2 row" >
-					<a href="register.php"><button type="button" class="btn btn-block btn-primary">Create Account</button></a>
-				</div>
-			</div>
-		</form>
-			
-		<footer class="col-xs-12">
-			<hr>
-			<p style="text-align:center">&copy Team 26</p>
-		</footer>
-		
-	</div>
-</body>
+            <section class="stepBG">
+                <div class="container">
+                    <div class="textBox">
+                        <h1>What can I do?</h1>
+                        <div class="stepText">
+                            <p>
+                                1. Create your own lists of food preferences based on likes, dislikes, and food allergies by registering an account with us.
+                            </p>
+                            <p>
+                                2. Combine your list with your friends' list so you can see what everyone's preferences are.
+                            </p>
+                            <p>
+                                3. Log in to start preparing!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row endButton">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <button class="btn btn-primary btn-lg btn-block registerBtn" type="button" onclick="location.href='register.php';">Register</button>
+                            <button class="btn btn-secondary btn-sm btn-block haveAccBtn" style="background-color: #e3e3e3;" type="button" onclick="location.href='login.php';">Already have an account?</button>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="endBlock">
+                <div class="container">
+                    <div class="aboutUs">
+                        <h2>About Us</h2>
+                        <br />
+                        <p>
+                            We are a team of 6 developers based in <span id="easterRain">Metro Vancouver</span>. Our overall project goal is to reduce food waste. The target is reducing unwanted leftovers which makes up 20% of all food waste.
+                        </p>
+                        <br />
+                        <p>
+                            If you have any questions or comments regarding our website, please use our "Contact Us" form located at the bottom of the page to reach us.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <?php include("include/footer.inc") ?>
+
+        <script src="js/rain.js"></script>
+
+
+        <script>
+            $("#easterRain").click(function(){
+                $("#easterRain").text("Metro Raincouver");
+                createRain();
+            });
+        </script>
+    </body>
+</html>
